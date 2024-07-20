@@ -17,22 +17,22 @@ namespace SauceDemoPOM.Pages
         private By lastNameField = By.XPath("//input[@id='last-name']");
         private By postalCodeField = By.XPath("//input[@id='postal-code']");
         private By continueButton = By.XPath("//input[@id='continue']");
-        private By finishButton = By.XPath("//input[@id='finish']");
+        private By finishButton = By.XPath("//button[@id='finish']");
         private By completionHeader = By.XPath("//h2[@class='complete-header']");
 
-        public void EnterFirstName()
+        public void EnterFirstName(string firstname)
         {
-            Type(firstNameField, "testName");
+            Type(firstNameField, firstname);
         }
 
-        public void EnterLastName()
+        public void EnterLastName(string lastname)
         {
-            Type(lastNameField, "testLastName");
+            Type(lastNameField, lastname);
         }
 
-        public void EnterPostalCode()
+        public void EnterPostalCode(string postcode)
         {
-            Type(postalCodeField, "1337");
+            Type(postalCodeField, postcode);
         }
 
         public void ClickContinueButton()

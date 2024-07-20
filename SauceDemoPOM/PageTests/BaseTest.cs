@@ -17,18 +17,25 @@ namespace SauceDemoPOM.PageTests
 
         protected LoginPage loginPage;
         protected InventoryPage inventoryPage;
+        protected CartPage cartPage;
+        protected CheckoutPage checkoutPage;
+        protected HiddenMenuPage hiddenMenuPage;
 
         [SetUp] 
         public void Setup()
         {
             var chromeOptions = new ChromeOptions();
             chromeOptions.AddUserProfilePreference("profile.password_manager_enabled", false);
+            chromeOptions.AddArgument("--headless");
             this.driver = new ChromeDriver(chromeOptions);
             this.driver.Manage().Window.Maximize();
             this.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
             loginPage = new LoginPage(driver);
             inventoryPage = new InventoryPage(driver);
+            cartPage = new CartPage(driver);
+            checkoutPage = new CheckoutPage(driver);
+            hiddenMenuPage = new HiddenMenuPage(driver);
         }
 
         [TearDown]
@@ -47,6 +54,11 @@ namespace SauceDemoPOM.PageTests
             loginPage.InputUsername(username);
             loginPage.InputPassword(password);
             loginPage.ClickLoginButton();
+        }
+
+        public string GenerateRandomName()
+        {
+            return $"TestName-{new Random().Next(0, 1000)}";
         }
 
     }

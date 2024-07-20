@@ -16,7 +16,7 @@ namespace SauceDemoPOM.Pages
         private readonly By usernameField = By.XPath("//input[@id='user-name']");
         private readonly By passwordField = By.XPath("//input[@id='password']");
         private readonly By loginButton = By.XPath("//input[@id='login-button']");
-        private readonly By errorMessage = By.XPath("//input[@id='//div//h3']");
+        private readonly By errorMessage = By.XPath("//div[@class='error-message-container error']/h3");
         private readonly By errorButton = By.XPath("//div//h3//button");
 
         public void InputUsername(string username)

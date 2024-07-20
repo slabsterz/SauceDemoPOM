@@ -32,7 +32,7 @@ namespace SauceDemoPOM.Pages
             Click(cartLink);
         }
 
-        public bool IsElementDisplayed()
+        public bool IsInventoryItemsDisplayed()
         {
             var allElements = FindElements(inventoryItems);
             return allElements.Any();

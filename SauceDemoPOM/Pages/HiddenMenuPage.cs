@@ -13,7 +13,7 @@ namespace SauceDemoPOM.Pages
         {            
         }
 
-        private By hamburgerMenuButton = By.XPath("react-burger-menu-btn");
+        private By hamburgerMenuButton = By.XPath("//button[@id='react-burger-menu-btn']");
         private By logoutButton = By.XPath("//div[@class='bm-menu']//a[@id='logout_sidebar_link']");
         private By menuContainer = By.XPath("//div[@class='bm-menu-wrap']");
 

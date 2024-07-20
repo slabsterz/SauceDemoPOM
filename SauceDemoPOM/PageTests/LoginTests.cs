@@ -26,5 +26,15 @@ namespace SauceDemoPOM.PageTests
 
             Assert.That(message, Does.Contain("Username and password do not match any user in this service"));
         }
+
+        [Test]
+        public void TestLoginWithLockedOutUser()
+        {
+            UserLogin("locked_out_user", "secret_sauce");
+
+            string message = loginPage.GetErrorMessage();
+
+            Assert.That(message, Does.Contain("Sorry, this user has been locked out."));
+        }
     }
 }
